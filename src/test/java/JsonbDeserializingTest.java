@@ -3,12 +3,11 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import javax.json.bind.Jsonb;
-import javax.json.bind.JsonbConfig;
-import javax.json.bind.spi.JsonbProvider;
-
 import org.junit.Test;
 
+import jakarta.json.bind.Jsonb;
+import jakarta.json.bind.JsonbConfig;
+import jakarta.json.bind.spi.JsonbProvider;
 import test.FlexibleMimeTypeJsonbDeserializer;
 import test.NonParsingMimeTypeJsonbDeserializer;
 import test.StaticMimeTypeJsonbDeserializer;

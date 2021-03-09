@@ -4,10 +4,11 @@ import java.lang.reflect.Type;
 
 import javax.activation.MimeType;
 import javax.activation.MimeTypeParseException;
-import javax.json.bind.JsonbException;
-import javax.json.bind.serializer.DeserializationContext;
-import javax.json.bind.serializer.JsonbDeserializer;
-import javax.json.stream.JsonParser;
+
+import jakarta.json.bind.JsonbException;
+import jakarta.json.bind.serializer.DeserializationContext;
+import jakarta.json.bind.serializer.JsonbDeserializer;
+import jakarta.json.stream.JsonParser;
 
 public class StaticMimeTypeJsonbDeserializer implements JsonbDeserializer<MimeType> {
 
