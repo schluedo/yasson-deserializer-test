@@ -1,0 +1,16 @@
+{
+	"containerAttribute1" : "anyString1",
+	"testObject1" : {
+		"string1" : "s1",
+		"mimeTypeString": "text/plain",
+		"mimeTypeObject": {"primary":"text", "sub" : "plain"},
+		"string2" : "s2"
+	},
+	"testObject2" : {
+		"string1" : "s1",
+		"mimeTypeString": "text/plain",
+		"mimeTypeObject": {"primary":"text", "sub" : "plain"},
+		"string2" : "s2"
+	},
+	"containerAttribute2" : "anyString2"
+}

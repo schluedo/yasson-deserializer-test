@@ -1,0 +1,39 @@
+{
+"containerContainerAttribute1": "first",
+"testObjectContainer1":
+	{
+		"containerAttribute1" : "anyString1",
+		"testObject1" : {
+			"string1" : "s1",
+			"mimeTypeString": "text/plain",
+			"mimeTypeObject": {"primary":"text", "sub" : "plain"},
+			"string2" : "s2"
+		},
+		"testObject2" : {
+			"string1" : "s1",
+			"mimeTypeString": "text/plain",
+			"mimeTypeObject": {"primary":"text", "sub" : "plain"},
+			"string2" : "s2"
+		},
+		"containerAttribute2" : "anyString2"
+	},
+"containerContainerAttribute2": "second",
+"testObjectContainer2":
+	{
+		"containerAttribute1" : "anyString1",
+		"testObject1" : {
+			"string1" : "s1",
+			"mimeTypeString": "text/plain",
+			"mimeTypeObject": {"primary":"text", "sub" : "plain"},
+			"string2" : "s2"
+		},
+		"testObject2" : {
+			"string1" : "s1",
+			"mimeTypeString": "text/plain",
+			"mimeTypeObject": {"primary":"text", "sub" : "plain"},
+			"string2" : "s2"
+		},
+		"containerAttribute2" : "anyString2"
+	},
+"containerContainerAttribute3": "third"
+}

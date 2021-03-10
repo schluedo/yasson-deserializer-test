@@ -12,6 +12,11 @@ import javax.json.bind.serializer.DeserializationContext;
 import javax.json.bind.serializer.JsonbDeserializer;
 import javax.json.stream.JsonParser;
 
+/**
+ * this Deserializer sall be able to read plain mimeType-string AND/OR mimeType-object-structure
+ * 
+ *
+ */
 public class FlexibleMimeTypeJsonbDeserializer implements JsonbDeserializer<MimeType> {
 
 	public MimeType deserialize(JsonParser parser, DeserializationContext ctx, Type rtType) {

@@ -2,11 +2,14 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbConfig;
 import javax.json.bind.spi.JsonbProvider;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import test.FlexibleMimeTypeJsonbDeserializer;
@@ -40,18 +43,27 @@ public class JsonbDeserializingTest {
 	}
 	
 	public void parseAllFiles(Jsonb jsonb) throws Exception {
-		parseJson(jsonb, "mimeTypesOnlyObjectFirst.json");
-		parseJson(jsonb, "mimeTypesOnlyStringFirst.json");
-		parseJson(jsonb, "mimeTypesFirst.json");
-		parseJson(jsonb, "mimeTypesLast.json");
+		TestObject to = parseJson(jsonb, "mimeTypes.json", TestObject.class);
+		TestObjectContainer toc = parseJson(jsonb, "mimeTypesInContainer.json", TestObjectContainer.class);
+		TestObjectContainerContainer tocc = parseJson(jsonb, "mimeTypesInContainerInContainer.json", TestObjectContainerContainer.class);
 		
+		//first attribute is always parsed
+		Assert.assertNotNull(to.getString1());
+		Assert.assertNotNull(toc.getContainerAttribute1());
+		Assert.assertNotNull(tocc.getContainerContainerAttribute1());
+		
+		//last attribute is not parsed in case the issue occurs
+		Assert.assertNotNull(tocc.getContainerContainerAttribute2());
+		Assert.assertNotNull(toc.getContainerAttribute2());
+		Assert.assertNotNull(to.getString2());
+				
 	}
 	
 	
-	private TestObject parseJson(Jsonb jsonb, String filename) throws Exception {
+	private <T> T parseJson(Jsonb jsonb, String filename, Class<T> expectedType) throws Exception {
 		Path filePath = Paths.get("src/test/resources/").resolve(filename);
 		try (InputStream is = Files.newInputStream(filePath)){
-			TestObject testObject = jsonb.fromJson(is, TestObject.class);
+			T testObject = jsonb.fromJson(is, expectedType);
 			System.out.println("parsed from " + filename + ": " + testObject);
 			return testObject;
 		}

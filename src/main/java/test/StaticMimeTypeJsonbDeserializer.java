@@ -9,6 +9,10 @@ import javax.json.bind.serializer.DeserializationContext;
 import javax.json.bind.serializer.JsonbDeserializer;
 import javax.json.stream.JsonParser;
 
+/**
+ * this Deserializer just calls {@link JsonParser#getValue()} (and returns a special MimeType to see when it was applied)
+ *
+ */
 public class StaticMimeTypeJsonbDeserializer implements JsonbDeserializer<MimeType> {
 
 	public MimeType deserialize(JsonParser parser, DeserializationContext ctx, Type rtType) {

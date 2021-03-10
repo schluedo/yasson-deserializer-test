@@ -1,6 +1,0 @@
-{
-	"string1" : "s1",
-	"string2" : "s2",
-	"mimeTypeString": "text/plain",
-	"mimeTypeObject": {"primary":"text", "sub" : "plain"}
-}
